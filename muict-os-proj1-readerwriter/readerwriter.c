@@ -33,14 +33,16 @@ int main(int argc, char *argv[])
     // verify that correct number of arguments were passed in
     if (argc != 4)
     {
-        fprintf(stderr, "USAGE:./readme <WRITER THREAD NO.> <READER THREAD NO.> <OUTPUT.TXT>\n");
+        // e.g. ./readwrite 3 4 greetings.txt
+        fprintf(stderr, "USAGE:./readwrite <WRITER THREAD NO.> <READER THREAD NO.> <OUTPUT.TXT>\n");
         exit(-1);
     }
 
-    // get reader/writer threads count and output file
+    // get reader/writer threads count
     int numWriter = atoi(argv[1]);
     int numReader = atoi(argv[2]);
 
+    // generate list of random numbers
     generate();
 
     // generate reader threads
